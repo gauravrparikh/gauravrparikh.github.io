@@ -1,0 +1,12 @@
+---
+title: "Alternative Approaches for Modelling COVID-19: High-Accuracy Low-Data Predictions"
+collection: publications
+permalink: /publication/covid
+date: 2020-10-01
+venue: 'medRxiv PrePrint'
+paperurl: '/files/pdf/covid.pdf'
+link: 'https://www.medrxiv.org/content/10.1101/2020.07.22.20159731v1'
+code: 'https://github.com/debayanLab/covidPredictions'
+github: 'https://github.com/debayanLab/covidPredictions'
+citation: 'Dewang Agarwal<sup>*</sup>, <b>Soham De</b><sup>*</sup>, Ojas Shukla, Archit Checker, Ankita Borah, Debayan Gupta. 2020. doi:10.1101/2020.07.22.20159731 (<i>medRxiv preprint</i> )'
+---
