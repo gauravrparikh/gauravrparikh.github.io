@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Soham De"
+title                    : "Gaurav Rajesh Parikh"
 title_separator          : "-"
-name                     : &name "Soham De"
-description              : &description "CS Undergraduate"
+name                     : &name "Gaurav Rajesh Parikh"
+description              : &description "CS and Statistics Undergraduate"
 url                      : "https://gparikh100.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "gparikh100.github.io"
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : actuallysoham
+  username               : gparikh100
 facebook:
   username               :
   app_id                 :
@@ -73,21 +73,21 @@ social:
 
 # Analytics
 analytics:
-  provider               : "goatcounter" # false (default), "google", "google-universal", "custom", "goatcounter"
+  provider               : 
   google:
     tracking_id          : 
   goatcounter:
-    code		 : sohamde
+    code		 : 
 
 
 # Site Author
 author:
-  name             : "Soham De"
+  name             : "Gaurav Rajesh Parikh"
   avatar           : "profile.png"
-  bio              : "CS Undergaduate"
+  bio              : "CS and Statistics Undergaduate"
   location         : "India"
   employer         :
-  email            : "soham.de_ug22@ashoka.edu.in"
+  email            : "gaurav.rajesh.parikh@duke.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,19 +96,19 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "actuallysoham"
+  github           : "gparikh100"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "gr90"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "actuallysoham"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
