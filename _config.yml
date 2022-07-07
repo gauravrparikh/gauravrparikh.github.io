@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Gaurav Rajesh Parikh"
 title_separator          : "-"
 name                     : &name "Gaurav Rajesh Parikh"
-description              : &description "CS Undergraduate"
+description              : &description "Data Science Undergraduate"
 url                      : "https://gparikh100.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "gparikh100.github.io"
@@ -73,18 +73,18 @@ social:
 
 # Analytics
 analytics:
-  provider               : "goatcounter" # false (default), "google", "google-universal", "custom", "goatcounter"
+  provider               : 
   google:
     tracking_id          : 
   goatcounter:
-    code		 : gparikh100
+    code		 : 
 
 
 # Site Author
 author:
   name             : "Gaurav Rajesh Parikh"
   avatar           : "profile.png"
-  bio              : "Data Science Undergaduate"
+  bio              : "CS and Stats Undergaduate"
   location         : "United States"
   employer         :
   email            : "gaurav.rajesh.parikh@duke.edu"
@@ -100,12 +100,12 @@ author:
   google_plus      :
   keybase          :
   instagram        :
-  impactstory      : 
+  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "gr90"
+  linkedin         :"gr90"
   pinterest        :
   soundcloud       :
-  stackoverflow    : 
+  stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
   twitter          : 
