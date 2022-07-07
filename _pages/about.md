@@ -8,10 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Soham!
+Hello World, I am Gaurav!
 
-I'm a rising junior at [Ashoka University](https://www.ashoka.edu.in/) studying Computer Science. My current research interests span Machine Learning, Cryptography and their intersectection (aka Privacy-Preserving Machine Learning). I'm a part of the [MPhasis Lab](https://ashoka.edu.in/ML2CT) at Ashoka, being advised by [Dr. Mahavir Jhawar](https://sites.google.com/site/homeofmahavir/Home) and [Dr. Subhashis Banerjee](https://www.cse.iitd.ac.in/~suban/). Previously, I've been a part of [BharatSim](https://www.thoughtworks.com/engineering-research/bharatsim) and [CiPHER](https://cipher.ashoka.edu.in/en/) under [Dr. Debayan Gupta](https://debayangupta.com/).
+I'm a rising senior at [Duke](https://www.ashoka.edu.in/) and [Duke Kunshan](https://www.ashoka.edu.in/)  studying Computer Science and Statistics with an IDM in Data Science. Previously, I interned at the [National Stock Exchange](https://www.nseindia.com/) where I investigatged anomaly detection algorithms.
 
-Beyond academics, I'm a competent artist, photographer, archer and an incompetent pianist. I've also been into cooking recently. 
+I am currently doing research in Causal Inference as a part of the [AME Lab](https://almost-matching-exactly.github.io/) at Duke, being advised by [Dr. Cynthia Rudin](https://users.cs.duke.edu/~sudeepa/) and [Dr. Sudeepa Roy](https://users.cs.duke.edu/~cynthia/). 
 
-I grew up in Kolkata and did my primary schooling from [The Heritage School](https://www.theheritageschool.org/), Kolkata, IN.
+Part time, I also work in the Venue and Production Management Department at Duke where I manage Front of House activities and get to enjoy dance, theatre and music performances from leading artists.
