@@ -1,6 +1,6 @@
 ---
-permalink: /teaching/
-title: "Teaching + Talks"
+permalink: /productivity/
+title: "Productivity"
 ---
 
 I'd much rather be a student than a 'teacher' right now, but I love talking about things that excite me and have also been a teaching assistant for undergraduate courses.
