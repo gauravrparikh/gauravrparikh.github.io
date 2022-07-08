@@ -1,15 +1,15 @@
 # main links links
 main:
-  - title: "Publications + Reports"
+  - title: "Projects"
     url: /publications/
     
   #- title: "Research"
   #  url: /research/
 
-  - title: "Teaching + Talks"
+  - title: "Productivity"
     url: /teaching/
 
-  - title: "Gallery"
+  - title: ""
     url: /gallery/
 
   - title: "Posts"

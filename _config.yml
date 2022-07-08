@@ -29,7 +29,7 @@ comments:
   facebook:
     appid                :
     num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    colorscheme          :  "neon"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
   branch                 : "gh-pages" # "master", "gh-pages"
@@ -85,8 +85,8 @@ author:
   name             : "Gaurav Rajesh Parikh"
   avatar           : "profile.png"
   bio              : "CS and Statistics Undergaduate"
-  location         : "India"
-  employer         :
+  location         : "United States"
+  employer         : "Duke University"
   email            : "gaurav.rajesh.parikh@duke.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
