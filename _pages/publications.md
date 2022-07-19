@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Prepared Manuscripts"
+title: "Projects"
 permalink: /publications/
 author_profile: true
 ---

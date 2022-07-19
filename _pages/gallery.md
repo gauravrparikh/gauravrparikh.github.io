@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Gallery"
+title: "Coursework"
 permalink: /gallery/
 author_profile: true
 ---

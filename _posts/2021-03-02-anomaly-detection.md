@@ -1,5 +1,5 @@
 ---
-title: Linux Schedulers (A Zine)
+title: Approaches to Anomaly Detection 
 output:
   md_document:
     variant: gfm
@@ -8,48 +8,51 @@ output:
       - "--wrap=preserve"
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "../_posts") })
-date: 2021-05-15
-permalink: /posts/2021/01/linux-schedulers
+date: 2021-08-01
+permalink: /posts/2021/08/anomaly-detection
 excerpt_separator: <!--more-->
 toc: true
 header: 
-  og_image: "posts/gps-gis-osm/plot_final-1.png"
+  og_image: "posts/plot_final-1.png"
 tags:
-  - Schedulers
-  - Linux
-  - Operating Systems
-  - Zines
+  - Anomaly Detection
+  - Fraud Detection
+  - Isolation Forests
+  - DBSCAN
 ---
 
+In working as an intern for the National Stock Exchange I had the chance to learn a little about anomaly detection. This post aims to describe some ideas and approaches to anomaly detection that I learned about. 
 
+[Edit: In updating this post to my website, I decided to once again read recent advances in anomaly detection and I found an excellent paper (see below) that provides an overview of current algorithms for anomaly detection.]
 
-This is an illustrated Zine (a small-circulation self-published work) about Linux Schedulers. [Tanvi](https://tanviroy.com) and I made it as a part of our Operating Systems Course with Prof [Manu Awasthi](https://mnwsth.github.io) and we wanted to share it with the world. It's loosely inspired by the amazing ones made by [Julia Evans](https://wizardzines.com)
-
-![](/images/posts/schedulers/cover.jpg)
+![](/images/anomaly.png)
 
 <!--more-->
 
 
-## Scheduler Basics
+## Anomaly Detection Basics
 
-A scheduler is a manager who decides which process gets to run next on the CPU. While doing so, it tries to convince each process that it has its own CPU. Scheduling policy is a balancing act between multiple goals, such as: 
+Anomaly detection is the process of identifying rare items, events or observations which deviate significantly from the majority of data. Anomaly detection is relevant in diverse fields like cyber security( identifying atypical user activity)law enforcement ( flagging suspicious behavioiur), financial fraud (isolating suspicious transactions), machine vision, climate modelling ( flagging low likelihood climatic events). 
 
-* **Low Latency:** How long does a process wait till it gets to run on the CPU?
-* **Progress:** How much does the process accomplish in a given timeframe?
-* **Fairness:** Who gets how much and why?
 
-![](/images/posts/schedulers/sched1.jpg)
+* **Unsupervised:** Given some data, does some subset of the data not subscribe to the normal form expectation of that data. 
+* **Supervised** Training a model on labelled data to create a classifier that can separate anomalies on unseen data.
+* **Semi Supervised** Training model on subset of labelled data that also relies on identifying underlying structure of the data. 
 
-## Multicore Systems Issues
+![](/images/anomaly.png)
 
-Since 2004, sinking transistors no longer resulted in faster processors. This led to multicore processors - they increase performance without increase clock-speed. However, that adds a bunch of new goals to attain, such as:
+## Types of Anomalies and Outliers
 
-* **Matching Single Processor Policy:** Given enough parallel processes to run, performance in an 8-core machine should be equivalent to a 1-core machine with an 8 times faster processor
-![](/images/posts/schedulers/singlematch.png)
-* **Scalability:** Architecture should be such, and overheads should be low enough that additional cores translate to increased performance
-![](/images/posts/schedulers/scale.png)
-* **Maximizing Hardware Features:** Processes continually scheduled on the same processor are likely to find data in the processors' cache. Cache/ Processor-affinity  may thus, significantly affect performance
-![](/images/posts/schedulers/hardware.png)
+
+* **Local:** 
+
+
+* **Global:** 
+
+
+* **Dependancy:** 
+
+* **Clustered:** 
 
 There are 2 main architectures in use, which address some of these issues in multi-core processors:
 
@@ -86,7 +89,6 @@ Several patches have added other features to CFS such as autogrouping (parent & 
 Processes are maintained in a (self-balancing) Red-Black Tree, indexed by their vruntime (the total time a process has run for). At every context-switch, process with minimum vruntime is selected (in O(1)). Here's the full process:
 ![](/images/posts/schedulers/CFS.png)
 
-## Brain F\*ck Scheduler
 ### What's this?
 A  proportional-share scheduler, designed by Con Kolivas in 2009 as an alternative to the CFS. It wasn't intended to be integrated with the mainline Linux kernel
 
@@ -114,6 +116,4 @@ Uses a timesharing scheduler implemented as an MLFQ, with temporary priority boo
 ### OSX
 OSX uses a priority-based decay-usage scheduler to implement timesharing. It also uses distributed run-queues
 
-<iframe src="https://www.sohamde.in/files/pdf/sched.pdf" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
-
-*That's it! If you find any errors, please let me know. Feel free to use any material from here (just let me know if you do!)*
+<iframe src="https://arxiv.org/pdf/2206.09426.pdf" width="100%" height="500" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
