@@ -10,8 +10,6 @@ redirect_from:
 
 Hi, I am Gaurav!
 
-![This](images/profile.png)
-
 I'm a rising senior at [Duke](https://duke.edu/) and [Duke Kunshan](https://www.dukekunshan.edu.cn/)  studying Computer Science and Statistics with an Interdisplinary Major in Data Science. In Summer 2021, interned at the [National Stock Exchange](https://www.nseindia.com/) where I investigated anomaly detection algorithms
 
 I am currently doing research in Causal Inference as a part of the [AME Lab](https://almost-matching-exactly.github.io/) at Duke, being advised by [Dr. Cynthia Rudin](https://users.cs.duke.edu/~sudeepa/) and [Dr. Sudeepa Roy](https://users.cs.duke.edu/~cynthia/). 

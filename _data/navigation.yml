@@ -1,16 +1,16 @@
 # main links links
 main:
   - title: "Projects"
-    url: /publications/
+    url: /projects/
     
-  #- title: "Research"
-  #  url: /research/
+  - title: "Research"
+   url: /research/
 
-  - title: "Productivity"
-    url: /teaching/
+  - title: "Product Ideas"
+    url: /product/
 
-  - title: "Courses"
-    url: /gallery/
+  - title: "Data Science"
+    url: /Data Science/
 
   - title: "Posts"
     url: /posts/

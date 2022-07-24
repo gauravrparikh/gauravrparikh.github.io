@@ -21,7 +21,7 @@ tags:
   - DBSCAN
 ---
 
-In working as an intern for the National Stock Exchange I had the chance to learn a little about anomaly detection. This post aims to describe some ideas and approaches to anomaly detection that I learned about. 
+In working as an intern for the National Stock Exchange I had the chance to learn a little about anomaly detection. This post aims to describe some ideas and approaches to anomaly detection.
 
 [Edit: In updating this post to my website, I decided to once again read recent advances in anomaly detection and I found an excellent paper (see below) that provides an overview of current algorithms for anomaly detection.]
 
@@ -44,7 +44,7 @@ Anomaly detection is the process of identifying rare items, events or observatio
 ## Types of Anomalies and Outliers
 
 
-* **Local:** 
+* **Local:** A local anomaly is 
 
 
 * **Global:** 
@@ -54,19 +54,26 @@ Anomaly detection is the process of identifying rare items, events or observatio
 
 * **Clustered:** 
 
-There are 2 main architectures in use, which address some of these issues in multi-core processors:
+## Approaches
 
-* **Global Queue:** Each processor selects processes from a shared global run-queue. This natively tries to match single processor policy. Drawbacks include complicated synchronization among processors and poor scalability
+* **Statistical Techniques:** 
+
 ![](/images/posts/schedulers/global.png)
-* **Distributed Queue:** Each process gets its own run-queue. This makes this approach easily scalable and also uses cache hierarchies effectively. The major drawback is the need for a complicated load-balancing mechanism across all run-queues, to match the single processor policy. 
-![](/images/posts/schedulers/distributed.png)
+* **Cluster Based:** 
 
-## O(1) Scheduler
 
-### What's this?
-A  stable, timesharing scheduler, used in Linux from 2.6 through 2.6.22. It was also used internally by Google till at least 2009
 
-### What's cool?
+
+* **Partitioning of Covariate Space:** 
+* **Weak Learner Based Models:** 
+* **:** 
+
+## Data Preprocessing
+
+###  Nominal, Ordinal, Discrete, Continuous
+
+
+### Score Normalization, Rank Aggregation and Majority Voting
 The next task to run is selected in O(1). In fact every step of the algorithm happens in O(1) - it's  fast!
 
 ### What's not?
