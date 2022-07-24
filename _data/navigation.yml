@@ -8,10 +8,7 @@ main:
 
   - title: "Product Ideas"
     url: /product/
-
-  - title: "Data Science"
-    url: /Data Science/
-
+    
   - title: "Posts"
     url: /posts/
     
