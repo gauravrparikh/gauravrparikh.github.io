@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Coursework"
-permalink: /gallery/
+title: "Data Science"
+permalink: /datascience/
 author_profile: true
 ---
