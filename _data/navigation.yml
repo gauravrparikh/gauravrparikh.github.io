@@ -1,13 +1,16 @@
 # main links links
 main:
-  - title: "Projects"
-    url: /projects/
+  - title: "Publications + Reports"
+    url: /publications/
     
-  - title: "Research"
-   url: /research/
+  #- title: "Research"
+  #  url: /research/
 
-  - title: "Product Design"
-    url: /product/
+  - title: "Teaching + Talks"
+    url: /teaching/
+
+  - title: "Gallery"
+    url: /gallery/
 
   - title: "Posts"
     url: /posts/
