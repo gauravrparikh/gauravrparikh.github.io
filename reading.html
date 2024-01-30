@@ -1,79 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Reading List</title>
     <script src="https://www.goodreads.com/api/keys.js"></script>
+    <style type="text/css" media="screen">
+        .gr_grid_container {
+            /* customize grid container div here. eg: width: 500px; */
+        }
+
+        .gr_grid_book_container {
+            /* customize book cover container div here */
+            float: left;
+            width: 39px;
+            height: 60px;
+            padding: 0px 0px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <h1>My Reading List</h1>
 
     <div id="goodreads-widget"></div>
-          <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work -->
-          <style type="text/css" media="screen">
-            .gr_custom_container_ {
-              /* customize your Goodreads widget container here*/
-              border: 1px solid gray;
-              border-radius:10px;
-              padding: 10px 5px 10px 5px;
-              background-color: #FFF;
-              color: #000;
-              width: 300px
-            }
-            .gr_custom_header_ {
-              /* customize your Goodreads header here*/
-              border-bottom: 1px solid gray;
-              width: 100%;
-              margin-bottom: 5px;
-              text-align: center;
-              font-size: 120%
-            }
-            .gr_custom_each_container_ {
-              /* customize each individual book container here */
-              width: 100%;
-              clear: both;
-              margin-bottom: 10px;
-              overflow: auto;
-              padding-bottom: 4px;
-              border-bottom: 1px solid #aaa;
-            }
-            .gr_custom_book_container_ {
-              /* customize your book covers here */
-              overflow: hidden;
-              height: 60px;
-                float: left;
-                margin-right: 4px;
-                width: 39px;
-            }
-            .gr_custom_author_ {
-              /* customize your author names here */
-              font-size: 10px;
-            }
-            .gr_custom_tags_ {
-              /* customize your tags here */
-              font-size: 10px;
-              color: gray;
-            }
-            .gr_custom_rating_ {
-              /* customize your rating stars here */
-              float: right;
-            }
-          </style>
-          
-                <div id="gr_custom_widget_">
-                    <div class="gr_custom_container_">
-              <h2 class="gr_custom_header_">
-              <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/63582895-gaurav-parikh?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Gaurav Parikh&#39;s books</a>
-              </h2>
-            <br style="clear: both"/>
-            <center>
-              <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
-            </center>
+
+    <div id="gr_grid_widget_1706655421">
+        <!-- Show static HTML as a placeholder in case js is not enabled - javascript include will override this if things work -->
+        <h2>
+            <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/63582895-gaurav-parikh?shelf=read&utm_medium=api&utm_source=grid_widget">Gaurav Parikh's books</a>
+        </h2>
+        <div class="gr_grid_container">
+            <br style="clear: both"/><br/>
+            <a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/63582895-gaurav-parikh">Gaurav Parikh's favorite books »</a>
             <noscript>
-              Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Gaurav Parikh, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
+                <br/>Share <a rel="nofollow" href="https://www.goodreads.com/review/list/63582895-gaurav-parikh?shelf=read&utm_medium=api&utm_source=grid_widget">book reviews</a> and ratings with Gaurav Parikh, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
             </noscript>
-            </div>
-          
-                </div>
-                <script src="https://www.goodreads.com/review/custom_widget/63582895.Gaurav%20Parikh's%20bookshelf:%20read?cover_position=&cover_size=&num_books=5&order=&shelf=&sort=&widget_bg_transparent=" type="text/javascript" charset="utf-8"></script>
+        </div>
+    </div>
+    <script src="https://www.goodreads.com/review/grid_widget/63582895?cover_size=&hide_link=&hide_title=&num_books=20&order=&shelf=&sort=&widget_id=1706655421" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
