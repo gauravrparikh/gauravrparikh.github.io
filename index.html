@@ -63,30 +63,6 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	<script>
-		// JavaScript to redirect to the custom 404 page
-		document.addEventListener('DOMContentLoaded', function() {
-			var currentUrl = window.location.href;
-			var validPages = [
-				'', // The index page
-				'index.html',
-				'about.html',
-				'research.html',
-				'reading.html',
-				'travel.html',
-				'writing.html',
-				'nature.html',
-				'sports.html',
-				'people.html',
-				'cities.html'
-				// Add more valid pages as needed
-			];
-
-			if (!validPages.some(function(page) { return currentUrl.includes(page); })) {
-				window.location.href = 'custom_404.html'; // Replace 'custom_404.html' with your actual custom 404 page
-			}
-		});
-	</script>
 
 	</head>
 	<body>
