@@ -1,43 +1,31 @@
+# Personal Website
 
-TITLE: 
-Epic - 100% Fully Responsive Free HTML5 Bootstrap Template
+This is the README file for my personal website. It provides an overview of the project and instructions on how to set it up and run it locally.
 
-AUTHOR:
-DESIGNED & DEVELOPED by FREEHTML5.co
+## Table of Contents
 
-Website: http://freehtml5.co/
-Twitter: http://twitter.com/fh5co
-Facebook: http://facebook.com/fh5co
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Description
 
-CREDITS:
+In this section, you can provide a brief description of your personal website. Explain its purpose, features, and any technologies or frameworks used.
 
-Bootstrap
-http://getbootstrap.com/
+## Installation
 
-jQuery
-http://jquery.com/
+Here, you can provide step-by-step instructions on how to install and set up the project locally. Include any dependencies or prerequisites that need to be installed.
 
-jQuery Easing
-http://gsgd.co.uk/sandbox/jquery/easing/
+## Usage
 
-Modernizr
-http://modernizr.com/
+Explain how to use the website. Provide instructions on how to navigate through different sections, interact with features, and any other relevant information.
 
-Google Fonts
-https://www.google.com/fonts/
+## Contributing
 
-Icomoon
-https://icomoon.io/app/
+If you want to allow others to contribute to your website, provide guidelines on how they can do so. Include information on how to submit bug reports, feature requests, or pull requests.
 
-Respond JS
-https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
+## License
 
-animate.css
-http://daneden.me/animate
-
-jQuery Waypoint
-https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
-
-Magnific Popup
-http://dimsemenov.com/plugins/magnific-popup/
+Specify the license under which your website is released. This can be an open-source license or a custom license.
