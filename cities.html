@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favorite Cities</title>
-    <script>
-        // Listen for the pageshow event
-        window.addEventListener('pageshow', function(event) {
-          // Check if the navigation type is a back navigation
-          if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-            // Redirect to index.html and force a page reload
-            window.location.href = 'index.html';
-          }
-        });
-      </script>
-      
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -139,12 +129,13 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <h1>My Favorite Cities</h1>
     </header>
 
-    <ol>
+    <ol id="city-list">
         <li draggable="true" class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
@@ -168,19 +159,19 @@
 
     <script>
         // JavaScript for enabling drag and drop
-        const list = document.querySelector('ol');
+        const list = document.getElementById('city-list');
 
         let dragStartIndex;
 
         list.addEventListener('dragstart', (e) => {
-            dragStartIndex = e.target.closest('li').getAttribute('data-index');
+            dragStartIndex = [...list.children].indexOf(e.target);
             e.dataTransfer.effectAllowed = 'move';
             e.dataTransfer.setData('text/plain', dragStartIndex);
         });
 
         list.addEventListener('dragover', (e) => {
             e.preventDefault();
-            const dragOverIndex = e.target.closest('li').getAttribute('data-index');
+            const dragOverIndex = [...list.children].indexOf(e.target);
             const draggedItem = document.querySelector(`[data-index="${dragStartIndex}"]`);
             const dragOverItem = document.querySelector(`[data-index="${dragOverIndex}"]`);
             const rect = dragOverItem.getBoundingClientRect();
@@ -189,7 +180,7 @@
         });
 
         list.addEventListener('dragend', () => {
-            const items = document.querySelectorAll('li');
+            const items = document.querySelectorAll('.flip-card');
             items.forEach((item, index) => {
                 item.setAttribute('data-index', index);
             });
@@ -202,4 +193,5 @@
         }
     </script>
 </body>
+
 </html>
