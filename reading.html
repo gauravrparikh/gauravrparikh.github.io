@@ -11,6 +11,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      background-color: #e0e8f9; /* Light shade of blue */
     }
 
     #container {
@@ -29,37 +30,18 @@
       height: auto;
       width: calc(25% - 10px); /* Adjust the width and spacing as needed */
       margin: 5px; /* Add spacing between images */
-      transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77, -1.17, .75, .84), box-shadow .3s, z-index .3s;
+      transition: transform 0.6s ease-out, offset-path 0.6s cubic-bezier(.77, -1.17, .75, .84), box-shadow 0.6s, z-index 0.6s;
       box-shadow: 1px 1px 3px #0008;
     }
 
     img:hover {
-      transform: scale(1.5);
+      transform: scale(1.2);
       /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
       offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
-      box-shadow: 3px 4px 10px #0006;
+      box-shadow: 3px 4px 8px #0006;
       /* ensures that image gets on top of stack at the start of "popping" animation
         and gets back at the end of getting back. With a smaller value, 2 different transitions would be needed */
       z-index: 999;
-    }
-
-    label {
-      display: block;
-      margin: 10px 0;
-    }
-
-    input {
-      width: 100%;
-      padding: 5px;
-    }
-
-    button {
-      padding: 8px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -67,32 +49,11 @@
 
   <div id="container">
     <p id="imageContainer">
-      <img src="img/beach.jpg">
-      <img src="img/bund.jpg">
-      <img src="img/pr.jpg">
+      <img src="img/books/inxnd.jpg">
+      <img src="img/books/sula.jpg">
+      <img src="img/books/crawdads.jpg">
     </p>
-
-    <div>
-      <label for="assetLink">Asset Link:</label>
-      <input type="text" id="assetLink" placeholder="Enter asset link">
-      <button onclick="addAsset()">Add Asset</button>
-    </div>
   </div>
-
-  <script>
-    function addAsset() {
-      const assetLink = document.getElementById('assetLink').value;
-      if (assetLink) {
-        const imageContainer = document.getElementById('imageContainer');
-        const img = document.createElement('img');
-        img.src = assetLink;
-        imageContainer.appendChild(img);
-      }
-    }
-  </script>
 
 </body>
 </html>
-
-
-
