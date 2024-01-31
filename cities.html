@@ -1,197 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite Cities</title>
+    <title>Cities with Background Images</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-        header {
-            background-color: #1d3557;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
+.cities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-        ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+.city-item {
+    width: 45%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
 
-        li {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 15px;
-            overflow: hidden;
-            width: 300px;
-            cursor: grab;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
+.city-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-        li:active {
-            cursor: grabbing;
-        }
+.city-item h2 {
+    margin-top: 0;
+}
 
-        li:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            background-color: #457b9d;
-            color: #ffffff;
-            margin: 0;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        .city-description {
-            padding: 15px;
-            line-height: 1.6;
-        }
-
-        .panorama-image {
-            width: 100%;
-            height: auto;
-            margin-top: 15px;
-            border-top: 1px solid #ccc;
-            padding: 15px;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        .flip-card {
-            perspective: 1000px;
-            transition: transform 0.6s;
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-inner {
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            backface-visibility: hidden;
-        }
-
-        .flip-card-back {
-            transform: rotateY(180deg);
-            text-align: left;
-            padding: 15px;
-            background-color: #f4f4f4;
-        }
-
-        .learn-more-button {
-            background-color: #457b9d;
-            color: #ffffff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .learn-more-button:hover {
-            background-color: #1d3557;
-        }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>My Favorite Cities</h1>
-    </header>
-
-    <ol id="city-list">
-        <li draggable="true" class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h2>Denver, CO</h2>
-                    <img src="shanghai.jpg" alt="Denver Panorama" class="panorama-image">
-                </div>
-                <div class="flip-card-back">
-                    <h2>Denver, CO</h2>
-                    <div class="city-description">
-                        <p>Denver is the capital and largest city of the state of Colorado, known for its picturesque mountain views and outdoor activities.</p>
-                        <p>Interesting Fact: Denver is one of the sunniest cities in the United States, with about 300 days of sunshine per year.</p>
-                    </div>
-                    <button class="learn-more-button" onclick="toggleDescription(this)">Learn More</button>
-                </div>
+    <div class="container">
+        <h1>Explore These Cities</h1>
+        <div class="cities">
             </div>
-        </li>
-
-        <!-- Repeat the structure for other cities -->
-
-    </ol>
-
+    </div>
     <script>
-        // JavaScript for enabling drag and drop
-        const list = document.getElementById('city-list');
+        const cityItems = document.querySelectorAll('.city-item');
 
-        let dragStartIndex;
+cityItems.forEach((item) => {
+    const cityId = item.id;
+    const imagePath = `images/${cityId}.jpg`; // Replace with your image paths
+    item.style.backgroundImage = `url(${imagePath})`;
+});
 
-        list.addEventListener('dragstart', (e) => {
-            dragStartIndex = [...list.children].indexOf(e.target);
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', dragStartIndex);
-        });
-
-        list.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            const dragOverIndex = [...list.children].indexOf(e.target);
-            const draggedItem = document.querySelector(`[data-index="${dragStartIndex}"]`);
-            const dragOverItem = document.querySelector(`[data-index="${dragOverIndex}"]`);
-            const rect = dragOverItem.getBoundingClientRect();
-            const next = (e.clientY - rect.top) > (rect.bottom - e.clientY);
-            list.insertBefore(draggedItem, next ? dragOverItem.nextSibling : dragOverItem);
-        });
-
-        list.addEventListener('dragend', () => {
-            const items = document.querySelectorAll('.flip-card');
-            items.forEach((item, index) => {
-                item.setAttribute('data-index', index);
-            });
-        });
-
-        // Function to toggle additional city description
-        function toggleDescription(button) {
-            const flipCard = button.closest('.flip-card');
-            flipCard.classList.toggle('flipped');
-        }
     </script>
 </body>
-
 </html>
