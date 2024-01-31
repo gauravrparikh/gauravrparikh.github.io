@@ -1,25 +1,30 @@
+Certainly! Here's the modified code with padding, making it responsive, and replacing the second and third columns with a single column in the second frame for your posts:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Writing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden;
+            background-color: #e0e8f9; /* Light shade of blue */
         }
 
         #container {
             display: flex;
             height: 100vh;
+            flex-direction: column;
         }
 
         #left-frame, #right-frame {
             flex: 1;
-            height: 100%;
             overflow: auto;
             border: 1px solid #ddd;
             box-sizing: border-box;
@@ -28,11 +33,11 @@
 
         #bottom-frame {
             flex: 2;
-            height: 100%;
             overflow: auto;
             border: 1px solid #ddd;
             box-sizing: border-box;
             resize: vertical;
+            padding: 20px; /* Add padding for symmetry and aesthetics */
         }
 
         .post {
@@ -40,6 +45,16 @@
             margin: 10px;
             background-color: #f4f4f4;
             border-radius: 8px;
+        }
+
+        #right-frame {
+            display: flex;
+            flex-direction: column;
+            padding: 20px; /* Add padding for symmetry and aesthetics */
+        }
+
+        #right-frame h2 {
+            margin-bottom: 10px;
         }
     </style>
 </head>
