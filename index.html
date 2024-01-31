@@ -42,7 +42,17 @@
 	
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
+	<script>
+		// Listen for the pageshow event
+		window.addEventListener('pageshow', function(event) {
+		  // Check if the navigation type is a back navigation
+		  if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+			// Force a page reload
+			location.reload(true);
+		  }
+		});
+	  </script>
+	  
 
 
 	<!-- Modernizr JS -->
