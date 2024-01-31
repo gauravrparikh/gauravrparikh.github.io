@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favorite Cities</title>
+    <script>
+        // Listen for the pageshow event
+        window.addEventListener('pageshow', function(event) {
+          // Check if the navigation type is a back navigation
+          if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+            // Redirect to index.html and force a page reload
+            window.location.href = 'index.html';
+          }
+        });
+      </script>
+      
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -138,7 +149,7 @@
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <h2>Denver, CO</h2>
-                    <img src="denver_panorama.jpg" alt="Denver Panorama" class="panorama-image">
+                    <img src="shanghai.jpg" alt="Denver Panorama" class="panorama-image">
                 </div>
                 <div class="flip-card-back">
                     <h2>Denver, CO</h2>

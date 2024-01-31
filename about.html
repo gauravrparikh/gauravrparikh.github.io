@@ -52,7 +52,17 @@
 	
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
-
+	<script>
+		// Listen for the pageshow event
+		window.addEventListener('pageshow', function(event) {
+		  // Check if the navigation type is a back navigation
+		  if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+			// Redirect to index.html and force a page reload
+			window.location.href = 'index.html';
+		  }
+		});
+	  </script>
+	  
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
