@@ -70,8 +70,22 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="fh5co-logo">
-		<a href="index.html" class="transition"><i class="icon-camera"></i><em><span class="icon-home"></span></em></a>	
+		<a href="index.html" class="transition">
+			<i id="random-icon"></i>
+		</a>
 	</div>
+	
+	<script>
+		// List of preselected icons
+		const iconList = ["icon-camera", "icon-home", "icon-heart", "icon-star","icon-" /* add more icons */];
+	
+		// Randomly select an icon
+		const randomIcon = iconList[Math.floor(Math.random() * iconList.length)];
+	
+		// Set the selected icon as the class of the "random-icon" element
+		document.getElementById("random-icon").classList.add(randomIcon);
+	</script>
+	
 
 	<div id="fh5co-main" role="main">
 		
