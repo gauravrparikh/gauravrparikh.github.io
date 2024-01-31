@@ -6,20 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     p {
+      display: flex;
+      flex-wrap: wrap;
       height: 200px;
       width: 500px;
       margin: 100px auto;
-      position: relative;
     }
-
+  
     img {
       height: 100px;
-      position: absolute;
-      left: 0;
-      offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
-      box-shadow: 1px 1px 3px #0008;
-      transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
-      z-index: 0;
+      margin: 5px; /* Add spacing between images */
     }
 
     img:hover {
@@ -65,3 +61,5 @@
 
 </body>
 </html>
+
+
