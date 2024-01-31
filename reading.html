@@ -1,162 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Reading List</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="https://www.goodreads.com/api/keys.js"></script>
-    <style type="text/css" media="screen">
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    p {
+      height: 200px;
+      width: 500px;
+      margin: 100px auto;
+      position: relative;
+    }
 
-        h1 {
-            color: #382110;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 2em;
-        }
+    img {
+      height: 100px;
+      position: absolute;
+      left: 0;
+      offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+      box-shadow: 1px 1px 3px #0008;
+      transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
+      z-index: 0;
+    }
 
-        #goodreads-widget {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        #gr_grid_widget_1706655421 {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .gr_grid_branding {
-            display: block;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #382110;
-            text-decoration: none;
-            float: right;
-            clear: both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    img:hover {
+      transform: scale(3);
+      /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
+      offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+      box-shadow: 3px 4px 10px #0006;
+      /* ensures that image gets on top of stack at the start of "popping" animation
+        and gets back at the end of getting back. With a smaller value, 2 different transitions would be needed */
+      z-index: 999;
+    }
+  </style>
 </head>
 <body>
-    <h1>My Reading List</h1>
 
-         <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work -->
-         <style type="text/css" media="screen">
-            .gr_custom_container_1706722104 {
-              /* customize your Goodreads widget container here*/
-              border: 6px solid gray;
-              border-radius:10px;
-              padding: 10px 5px 10px 5px;
-              background-color: #FFFFFF;
-              color: #000000;
-              
-            }
-            .gr_custom_header_1706722104 {
-              /* customize your Goodreads header here*/
-              border-bottom: 1px solid gray;
-              width: 100%;
-              margin-bottom: 5px;
-              text-align: center;
-              font-size: 150%
-            }
-            .gr_custom_each_container_1706722104 {
-              /* customize each individual book container here */
-              width: 100%;
-              clear: both;
-              margin-bottom: 10px;
-              overflow: auto;
-              padding-bottom: 4px;
-              border-bottom: 1px solid #aaa;
-            }
-            .gr_custom_book_container_1706722104 {
-              /* customize your book covers here */
-              overflow: hidden;
-              height: 160px;
-                float: left;
-                margin-right: 4px;
-                width: 98px;
-            }
-            .gr_custom_author_1706722104 {
-              /* customize your author names here */
-              font-size: 10px;
-            }
-            .gr_custom_tags_1706722104 {
-              /* customize your tags here */
-              font-size: 10px;
-              color: gray;
-            }
-            .gr_custom_rating_1706722104 {
-              /* customize your rating stars here */
-              float: right;
-            }
-          </style>
-          
-                <div id="gr_custom_widget_1706722104">
-                    <div class="gr_custom_container_1706722104">
-              <h2 class="gr_custom_header_1706722104">
-              <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/63582895-gaurav-parikh?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Gaurav Parikh&#39;s bookshelf: read</a>
-              </h2>
-                <div class="gr_custom_each_container_1706722104">
-                    <div class="gr_custom_book_container_1706722104">
-                      <a title="In Xanadu: A Quest" rel="nofollow" href="https://www.goodreads.com/review/show/6220179822?utm_medium=api&amp;utm_source=custom_widget"><img alt="In Xanadu: A Quest" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1171869042l/124431.jpg" /></a>
-                    </div>
-                    <div class="gr_custom_rating_1706722104">
-                      <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
-                    </div>
-                    <div class="gr_custom_title_1706722104">
-                      <a rel="nofollow" href="https://www.goodreads.com/review/show/6220179822?utm_medium=api&amp;utm_source=custom_widget">In Xanadu: A Quest</a>
-                    </div>
-                    <div class="gr_custom_author_1706722104">
-                      by <a rel="nofollow" href="https://www.goodreads.com/author/show/60159.William_Dalrymple">William Dalrymple</a>
-                    </div>
-                    <div class="gr_custom_tags_1706722104">
-                      tagged:
-                      travelogue
-                    </div>
-                </div>
-                <div class="gr_custom_each_container_1706722104">
-                    <div class="gr_custom_book_container_1706722104">
-                      <a title="Sula" rel="nofollow" href="https://www.goodreads.com/review/show/6222365400?utm_medium=api&amp;utm_source=custom_widget"><img alt="Sula" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441578153l/11346._SX98_.jpg" /></a>
-                    </div>
-                    <div class="gr_custom_rating_1706722104">
-                      <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
-                    </div>
-                    <div class="gr_custom_title_1706722104">
-                      <a rel="nofollow" href="https://www.goodreads.com/review/show/6222365400?utm_medium=api&amp;utm_source=custom_widget">Sula</a>
-                    </div>
-                    <div class="gr_custom_author_1706722104">
-                      by <a rel="nofollow" href="https://www.goodreads.com/author/show/3534.Toni_Morrison">Toni Morrison</a>
-                    </div>
-                </div>
-            <br style="clear: both"/>
-            <center>
-              <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
-            </center>
-            <noscript>
-              Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Gaurav Parikh, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
-            </noscript>
-            </div>
-          
-                </div>
-                <script src="https://www.goodreads.com/review/custom_widget/63582895.Gaurav%20Parikh's%20bookshelf:%20read?cover_position=left&cover_size=medium&num_books=5&order=a&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_added&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=6&widget_id=1706722104&widget_text_color=000000&widget_title_size=large&widget_width=full" type="text/javascript" charset="utf-8"></script>
+  <div>
+    <p id="imageContainer">
+      <img src="https://placekitten.com/320/200">
+      <img src="https://placekitten.com/321/200">
+      <img src="https://placekitten.com/319/200">
+      <img src="https://placekitten.com/323/200">
+      <img src="https://placekitten.com/322/200">
+    </p>
+
+    <div>
+      <label for="assetLink">Asset Link:</label>
+      <input type="text" id="assetLink" placeholder="Enter asset link">
+      <button onclick="addAsset()">Add Asset</button>
+    </div>
+  </div>
+
+  <script>
+    function addAsset() {
+      const assetLink = document.getElementById('assetLink').value;
+      if (assetLink) {
+        const imageContainer = document.getElementById('imageContainer');
+        const img = document.createElement('img');
+        img.src = assetLink;
+        imageContainer.appendChild(img);
+      }
+    }
+  </script>
+
 </body>
 </html>
