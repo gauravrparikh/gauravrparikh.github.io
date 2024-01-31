@@ -6,7 +6,7 @@
     <title>My Favorite Cities</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -16,12 +16,13 @@
         header {
             background-color: #1d3557;
             color: #ffffff;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
         }
 
         h1 {
             margin: 0;
+            font-size: 1.8em;
         }
 
         ol {
@@ -37,29 +38,93 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
+            margin: 15px;
             overflow: hidden;
             width: 300px;
+            cursor: grab;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        li:active {
+            cursor: grabbing;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
             background-color: #457b9d;
             color: #ffffff;
             margin: 0;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
+            font-size: 1.2em;
         }
 
         .city-description {
-            padding: 10px;
+            padding: 15px;
+            line-height: 1.6;
         }
 
         .panorama-image {
             width: 100%;
             height: auto;
-            margin-top: 10px;
+            margin-top: 15px;
             border-top: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .flip-card {
+            perspective: 1000px;
+            transition: transform 0.6s;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-inner {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            text-align: left;
+            padding: 15px;
+            background-color: #f4f4f4;
+        }
+
+        .learn-more-button {
+            background-color: #457b9d;
+            color: #ffffff;
+            border: none;
             padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .learn-more-button:hover {
+            background-color: #1d3557;
         }
     </style>
 </head>
@@ -69,35 +134,61 @@
     </header>
 
     <ol>
-        <li>
-            <h2>Denver, CO</h2>
-            <div class="city-description">
-                <p>Denver is the capital and largest city of the state of Colorado, known for its picturesque mountain views and outdoor activities.</p>
-                <p>Interesting Fact: Denver is one of the sunniest cities in the United States, with about 300 days of sunshine per year.</p>
+        <li draggable="true" class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h2>Denver, CO</h2>
+                    <img src="denver_panorama.jpg" alt="Denver Panorama" class="panorama-image">
+                </div>
+                <div class="flip-card-back">
+                    <h2>Denver, CO</h2>
+                    <div class="city-description">
+                        <p>Denver is the capital and largest city of the state of Colorado, known for its picturesque mountain views and outdoor activities.</p>
+                        <p>Interesting Fact: Denver is one of the sunniest cities in the United States, with about 300 days of sunshine per year.</p>
+                    </div>
+                    <button class="learn-more-button" onclick="toggleDescription(this)">Learn More</button>
+                </div>
             </div>
-            <img src="denver_panorama.jpg" alt="Denver Panorama" class="panorama-image">
         </li>
 
-        <li>
-            <h2>Albany, NY</h2>
-            <div class="city-description">
-                <p>Albany is the capital city of the state of New York, rich in history and culture.</p>
-                <p>Interesting Fact: Albany is one of the oldest surviving European settlements from the original thirteen colonies and the longest continuously chartered city in the United States.</p>
-            </div>
-            <img src="albany_panorama.jpg" alt="Albany Panorama" class="panorama-image">
-        </li>
-
-        <li>
-            <h2>Kunshan</h2>
-            <div class="city-description">
-                <p>Kunshan is a county-level city in Jiangsu Province, China, known for its beautiful gardens and canals.</p>
-                <p>Interesting Fact: Kunshan is often referred to as the "Venice of the East" due to its scenic waterways and bridges.</p>
-            </div>
-            <img src="kunshan_panorama.jpg" alt="Kunshan Panorama" class="panorama-image">
-        </li>
-
-        <!-- Add similar structure for other cities -->
+        <!-- Repeat the structure for other cities -->
 
     </ol>
+
+    <script>
+        // JavaScript for enabling drag and drop
+        const list = document.querySelector('ol');
+
+        let dragStartIndex;
+
+        list.addEventListener('dragstart', (e) => {
+            dragStartIndex = e.target.closest('li').getAttribute('data-index');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', dragStartIndex);
+        });
+
+        list.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const dragOverIndex = e.target.closest('li').getAttribute('data-index');
+            const draggedItem = document.querySelector(`[data-index="${dragStartIndex}"]`);
+            const dragOverItem = document.querySelector(`[data-index="${dragOverIndex}"]`);
+            const rect = dragOverItem.getBoundingClientRect();
+            const next = (e.clientY - rect.top) > (rect.bottom - e.clientY);
+            list.insertBefore(draggedItem, next ? dragOverItem.nextSibling : dragOverItem);
+        });
+
+        list.addEventListener('dragend', () => {
+            const items = document.querySelectorAll('li');
+            items.forEach((item, index) => {
+                item.setAttribute('data-index', index);
+            });
+        });
+
+        // Function to toggle additional city description
+        function toggleDescription(button) {
+            const flipCard = button.closest('.flip-card');
+            flipCard.classList.toggle('flipped');
+        }
+    </script>
 </body>
 </html>
