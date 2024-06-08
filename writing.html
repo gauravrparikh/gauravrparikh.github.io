@@ -1,98 +1,112 @@
-Certainly! Here's the modified code with padding, making it responsive, and replacing the second and third columns with a single column in the second frame for your posts:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Writing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #e0e8f9; /* Light shade of blue */
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Gallery</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f7fb; /* Lighter shade for better contrast */
+      font-family: Arial, sans-serif;
+    }
 
-        #container {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
-        }
+    #container {
+      text-align: center;
+      max-width: 1200px;
+      margin: 20px;
+    }
 
-        #left-frame, #right-frame {
-            flex: 1;
-            overflow: auto;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-            resize: horizontal;
-        }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
 
-        #bottom-frame {
-            flex: 2;
-            overflow: auto;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-            resize: vertical;
-            padding: 20px; /* Add padding for symmetry and aesthetics */
-        }
+    .writing-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        .post {
-            padding: 20px;
-            margin: 10px;
-            background-color: #f4f4f4;
-            border-radius: 8px;
-        }
+    .writing-item div {
+      background-color: #fff;
+      width: calc(33.333% - 40px); /* 3 items per row */
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
 
-        #right-frame {
-            display: flex;
-            flex-direction: column;
-            padding: 20px; /* Add padding for symmetry and aesthetics */
-        }
+    .writing-item div:hover {
+      transform: scale(1.05);
+      box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
 
-        #right-frame h2 {
-            margin-bottom: 10px;
-        }
-    </style>
+    .writing-item h2 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .writing-item p {
+      font-size: 1em;
+      color: #666;
+    }
+
+    /* Responsive design */
+    @media (max-width: 1200px) {
+      .writing-item div {
+        width: calc(50% - 40px); /* 2 items per row */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .writing-item div {
+        width: calc(100% - 40px); /* 1 item per row */
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="container">
-        <!-- Left Frame - Instagram Posts -->
-        <div id="left-frame">
-            <h2>Instagram Posts</h2>
-            <!-- First Instagram Post -->
-            <div class="post">
-                <!-- Replace the following iframe with your Instagram posts embed code -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CqEt49kLH6i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <!-- Instagram Post Content -->
-                </blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
 
-            <!-- Third Instagram Post -->
-            <div class="post">
-                <!-- Replace the following iframe with your Instagram posts embed code -->
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CzZYCaqR3H7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <!-- Instagram Post Content -->
-                </blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-        </div>
-
-        <!-- Right Frame - Additional Content -->
-        <div id="right-frame">
-            <h2>Additional Content</h2>
-            <!-- Additional content goes here -->
-        </div>
-
-        <!-- Bottom Frame - News Feed -->
-        <div id="bottom-frame">
-            <h2>News Feed</h2>
-            <!-- News feed content goes here -->
-        </div>
+  <div id="container">
+    <h1>Writing Gallery</h1>
+    <div class="writing-item">
+      <div>
+        <h2>Title of Writing 1</h2>
+        <p>A brief description of the first piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
+      <div>
+        <h2>Title of Writing 2</h2>
+        <p>A brief description of the second piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
+      <div>
+        <h2>Title of Writing 3</h2>
+        <p>A brief description of the third piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
+      <div>
+        <h2>Title of Writing 4</h2>
+        <p>A brief description of the fourth piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
+      <div>
+        <h2>Title of Writing 5</h2>
+        <p>A brief description of the fifth piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
+      <div>
+        <h2>Title of Writing 6</h2>
+        <p>A brief description of the sixth piece of writing. This could be an article, a story, or any piece of writing you have created.</p>
+      </div>
     </div>
+  </div>
+
 </body>
 </html>

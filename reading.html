@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Gallery</title>
   <style>
     body {
       display: flex;
@@ -11,47 +12,84 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #e0e8f9; /* Light shade of blue */
+      background-color: #f4f7fb; /* Lighter shade for better contrast */
+      font-family: Arial, sans-serif;
     }
 
     #container {
       text-align: center;
+      max-width: 1200px;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
     }
 
     p {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 100%;
-      padding: 20px; /* Adjust the padding as needed for symmetry and aesthetics */
+      margin: 0;
+      padding: 0;
     }
 
     img {
-      height: auto;
-      width: calc(25% - 10px); /* Adjust the width and spacing as needed */
-      margin: 5px; /* Add spacing between images */
-      transition: transform 0.6s ease-out, offset-path 0.6s cubic-bezier(.77, -1.17, .75, .84), box-shadow 0.6s, z-index 0.6s;
-      box-shadow: 1px 1px 3px #0008;
+      width: calc(20% - 20px); /* 5 images per row */
+      margin: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
     }
 
     img:hover {
-      transform: scale(1.2);
-      /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
-      offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
-      box-shadow: 3px 4px 8px #0006;
-      /* ensures that image gets on top of stack at the start of "popping" animation
-        and gets back at the end of getting back. With a smaller value, 2 different transitions would be needed */
-      z-index: 999;
+      transform: scale(1.1);
+      box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+
+    /* Responsive design */
+    @media (max-width: 1200px) {
+      img {
+        width: calc(25% - 20px); /* 4 images per row */
+      }
+    }
+
+    @media (max-width: 992px) {
+      img {
+        width: calc(33.333% - 20px); /* 3 images per row */
+      }
+    }
+
+    @media (max-width: 768px) {
+      img {
+        width: calc(50% - 20px); /* 2 images per row */
+      }
+    }
+
+    @media (max-width: 480px) {
+      img {
+        width: calc(100% - 20px); /* 1 image per row */
+      }
     }
   </style>
 </head>
 <body>
 
   <div id="container">
+    <h1>Book Gallery</h1>
     <p id="imageContainer">
-      <img src="img/books/inxnd.jpg">
-      <img src="img/books/sula.jpg">
-      <img src="img/books/crawdads.jpg">
+      <img src="img/books/inxnd.jpg" alt="Book 1">
+      <img src="img/books/sula.jpg" alt="Book 2">
+      <img src="img/books/crawdads.jpg" alt="Book 3">
+      <img src="img/books/book4.jpg" alt="Book 4">
+      <img src="img/books/book5.jpg" alt="Book 5">
+      <img src="img/books/book6.jpg" alt="Book 6">
+      <img src="img/books/book7.jpg" alt="Book 7">
+      <img src="img/books/book8.jpg" alt="Book 8">
+      <img src="img/books/book9.jpg" alt="Book 9">
+      <img src="img/books/book10.jpg" alt="Book 10">
     </p>
   </div>
 
