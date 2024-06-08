@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,23 +8,155 @@
     <meta name="description" content="Gaurav's Portfolio Website" />
     <meta name="keywords" content="personal Portfolio Website for Gaurav" />
     <meta name="author" content="Gaurav Parikh" />
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
     <link rel="shortcut icon" href="favicon.ico">
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Roboto:400,300,700' rel='stylesheet' type='text/css'>
-    <!-- Animate -->
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic|Roboto:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon -->
     <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
     <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Magnific Popup -->
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Link to slow loading index page -->
-    <link rel="stylesheet" href="index_slow.html">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <div class="fh5co-loader"></div>
+    
+    <div id="fh5co-logo">
+        <a href="index.html" class="transition">
+            <i id="random-icon"></i>
+        </a>
+    </div>
+
+    <script>
+        // List of preselected icons
+        const iconList = ["icon-camera", "icon-home", "icon-heart", "icon-star", "icon-plane", "icon-ball"];
+        // Randomly select an icon
+        const randomIcon = iconList[Math.floor(Math.random() * iconList.length)];
+        // Set the selected icon as the class of the "random-icon" element
+        document.getElementById("random-icon").classList.add(randomIcon);
+    </script>
+
+    <div id="fh5co-main" role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="fh5co-intro padding-right">
+                        <h1>Hi! I'm Gaurav Parikh <em>&amp;</em> I am a Computer Science PhD student at Duke University, doing research in Machine Learning and Causal Inference. <a href="about.html" class="transition"><em>More about Me</em></a></h1>
+                        <ul class="fh5co-social">
+                            <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="nature.html" class="transition animate-box">
+                            <img src="img/nature.jpg" alt="Nature">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Nature</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="reading.html" class="transition animate-box">
+                            <img src="img/education.jpg" alt="Readings">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Readings</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="travel.html" class="transition animate-box">
+                            <img src="img/xian.jpg" alt="Travel">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Travel</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="writing.html" class="transition animate-box">
+                            <img src="img/pr.jpg" alt="Writing">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Writing</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fh5co-item">
+                        <a href="research.html" class="transition animate-box">
+                            <img src="img/research.jpg" alt="Research">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Research</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="sports.html" class="transition animate-box">
+                            <img src="img/sport.jpg" alt="Sports">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Sports</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="people.html" class="transition animate-box">
+                            <img src="img/people.jpg" alt="People">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>People</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="cities.html" class="transition animate-box">
+                            <img src="img/shanghai.jpg" alt="Cities">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Cities</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fh5co-item">
+                        <a href="goals.html" class="transition animate-box">
+                            <img src="img/goal.jpg" alt="Goals">
+                            <div class="fh5co-item-text-wrap">
+                                <div class="fh5co-item-text">
+                                    <h2>Goals</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="fh5co-footer" class="padding-left">
+                        <p><small>If you have a slow network connection or find that this page is taking too long to load, you can go to <a href="index_slow.html">this link</a>.</small></p>
+                        <ul class="fh5co-social">
+                            <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-instagram-with-circle"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
@@ -39,167 +168,16 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <!-- Magnific Popup -->
     <script src="js/jquery.magnific-popup.min.js"></script>
-
     <!-- Main JS -->
     <script src="js/main.js"></script>
+
     <script>
         // Listen for the pageshow event
         window.addEventListener('pageshow', function(event) {
-            // Check if the navigation type is a back navigation
             if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
-                // Force a page reload
                 location.reload(true);
             }
         });
     </script>
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-
-<!-- Loader -->
-<div class="fh5co-loader"></div>
-
-<div id="fh5co-logo">
-    <a href="index.html" class="transition">
-        <i id="random-icon"></i>
-    </a>
-</div>
-
-<script>
-    // List of preselected icons
-    const iconList = ["icon-camera", "icon-home", "icon-heart", "icon-star","icon-plane","icon-ball" /* add more icons */];
-
-    // Randomly select an icon
-    const randomIcon = iconList[Math.floor(Math.random() * iconList.length)];
-
-    // Set the selected icon as the class of the "random-icon" element
-    document.getElementById("random-icon").classList.add(randomIcon);
-</script>
-
-<div id="fh5co-main" role="main">
-    <div class="container">
-        <div class="fh5co-grid">
-            <div class="fh5co-col-1">
-                <div class="fh5co-intro padding-right">
-                    <h1>Hi! I'm Gaurav Parikh <em>&amp;</em> I am a Computer Science PhD student at Duke University, doing research in Machine Learning and Causal Inference.  <a href="about.html" class="transition"><em>More about Me</em></a></h1>
-                    <ul class="fh5co-social">
-                        <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-                    </ul>
-                </div>
-                <div class="fh5co-item">
-                    <a href="nature.html" class="transition animate-box">
-                        <img src="img/nature.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Nature</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="reading.html" class="transition animate-box">
-                        <img src="img/education.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Readings</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="travel.html" class="transition animate-box">
-                        <img src="img/xian.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Travel</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="writing.html" class="transition animate-box">
-                        <img src="img/pr.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Writing</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="fh5co-col-2">
-                <div class="fh5co-item">
-                    <a href="research.html" class="transition animate-box">
-                        <img src="img/research.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Research</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="sports.html" class="transition animate-box">
-                        <img src="img/sport.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Sports</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="people.html" class="transition animate-box">
-                        <img src="img/people.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>People</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="cities.html" class="transition animate-box">
-                        <img src="img/shanghai.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Cities</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="fh5co-item">
-                    <a href="goals.html" class="transition animate-box">
-                        <img src="img/goal.jpg" alt="img desc">
-                        <div class="fh5co-item-text-wrap">
-                            <div class="fh5co-item-text">
-                                <h2>Goals</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div id="fh5co-footer" class="padding-left">
-                    <p><small>If you have a slow network connection or find that this page is taking too long to load, you can go to <a href="index_slow.html">this link</a>.</small></p>
-                    <ul class="fh5co-social">
-                        <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-instagram-with-circle"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>
